@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html ng-app="pcApp">
+    <head>
+        <title>Pronos-conduite</title>
+        
+        <meta charset="utf-8" />
+        <meta name="msapplication-tap-highlight" content="no" />
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, target-densitydpi=device-dpi" />
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        
+        <link href="css/ratchet.min.css" rel="stylesheet">
+        <!--link href="css/ratchet-theme-android.min.css" rel="stylesheet" -->
+        < link href="css/ratchet-theme-ios.min.css" rel="stylesheet">
+        
+        <link href="css/app.css" rel="stylesheet">
+    </head>
+    <body>
+        <header class="bar bar-nav">
+          <h1 class="title">Pronos-conduite</h1>
+        </header>
+
+        <nav class="bar bar-tab" ng-controller="NavigationCtrl">
+            <a class="tab-item" ng-class="{active: menu=='notif'}" ng-click="menu='notif'" href="#notif">
+                <span class="icon icon-home"></span>
+                <span class="tab-label">Notifications</span>
+            </a>
+            <a class="tab-item" ng-class="{active: menu=='ajouter-prono'}" ng-click="menu='ajouter-prono'"  href="#ajouter-prono">
+                <span class="icon icon-compose"></span>
+                <span class="tab-label">Ajouter pronos</span>
+            </a>
+            <a class="tab-item" ng-class="{active: menu=='voir-prono'}" ng-click="menu='voir-prono'" href="#voir-prono">
+                <span class="icon icon-bars"></span>
+                <span class="tab-label">Voir pronos</span>
+            </a>
+            <a class="tab-item" ng-class="{active: menu=='classement'}" ng-click="menu='classement'" href="#classement">
+                <span class="icon icon-list"></span>
+                <span class="tab-label">Classement</span>
+            </a>
+        </nav>
+        
+        <div class="shadowing"></div>
+        <div class="content" ng-view></div>
+        
+        <!-- JS -->
+        <script src="js/jquery.min.js" type="text/javascript"></script>
+        
+        <script src="js/angular.min.js" type="text/javascript"></script>
+        <script src="js/angular-route.min.js" type="text/javascript"></script>
+        
+        <script src="js/ratchet.min.js" type="text/javascript"></script>
+
+        <script src="js/app.js" type="text/javascript"></script>
+    </body>
+</html>

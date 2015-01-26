@@ -1,0 +1,19 @@
+.shadowing {
+    display: none;
+    position: fixed;
+    top: 0%;
+    left: 0%;
+    width: 100%;
+    height: 100%;
+    background-color: #C8C8C8;
+    z-index:10;
+    opacity:0.5;
+    filter: alpha(opacity=50);
+    background-image:url("/img/loader.gif");
+    background-repeat:no-repeat;
+    background-position:center center;
+}
+
+.padding {
+    padding: 3% 3%;
+}
