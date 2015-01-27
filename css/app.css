@@ -18,11 +18,6 @@ h1 {
     color: white;
 }
 
-/** boutons **/
-.btn-negativ {
-    background-color: #ad1d28;
-}
-
 /** div de chargement (loader) **/
 .shadowing {
     display: none;
