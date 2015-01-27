@@ -4,7 +4,7 @@
 var errorMsg = "Impossible de récupérer les informations...";
 
 document.addEventListener("deviceready", function() {
-    //ici du code au chargement de l'appli
+    //ici du code cordova au chargement de l'appli
 }, false);
 
 
@@ -27,7 +27,7 @@ app.config(function($routeProvider) {
     })
     .when("/ajouter-prono", {
         templateUrl: "views/ajouter-prono.html",
-        name: "addProno"
+        name: "ajouter-prono"
     })
     .when("/classement", {
         templateUrl: "views/classement.html",
@@ -35,7 +35,7 @@ app.config(function($routeProvider) {
     })
     .when("/voir-prono", {
         templateUrl: "views/voir-prono.html",
-        name: "voirProno"
+        name: "voir-prono"
     })
     .when("/login", {
         templateUrl: "views/login.html",
@@ -51,9 +51,10 @@ app.config(function($routeProvider) {
  * Controlleurs
  */
 //navigation controlleur
-app.controller("NavigationCtrl", function($scope, $location, $routeParams, $route) {
-    //@todo voir sur quelle route on arrive pour setter le bon menu (get the current route name)
-    $scope.menu = 'notif';
+app.controller("NavigationCtrl", function($scope) {
+    $scope.$on("$routeChangeSuccess", function(e, data) {
+        $scope.menu = data.$$route.name;
+    });
 });
 
 //notifications controlleur
@@ -92,7 +93,6 @@ app.controller("PronostiqueCtrl", function($scope, $http) {
     $(".shadowing").show();
     $http.get(url)
     .success(function(response) {
-        
         $scope.pronostiques = response;
         $(".shadowing").hide();
     })
@@ -103,7 +103,7 @@ app.controller("PronostiqueCtrl", function($scope, $http) {
 });
 
 //ajouter-prono controlleur
-app.controller("AddPronoCtrl", function($scope, $element, $http) {
+app.controller("AddPronoCtrl", function($scope, $http) {
     //récupère les données (equipes qui jouent, cotes du match, etc...)
     var url = "http://www.pronos-conduite.com/api/getNextMatch";
     $(".shadowing").show();
@@ -124,7 +124,7 @@ app.controller("AddPronoCtrl", function($scope, $element, $http) {
         $(".shadowing").show();
         $http
         .post(url, { 
-            
+            //@todo : poster les données
         })
         .success(function(response) {
             $scope.notifications = response;
@@ -136,3 +136,7 @@ app.controller("AddPronoCtrl", function($scope, $element, $http) {
         });
     }
 });
+
+
+
+
