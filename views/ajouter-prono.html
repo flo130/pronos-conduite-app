@@ -1,23 +1,18 @@
 <div  class="padding" ng-controller="AddPronoCtrl">
-    <h1 class="content-padded">Guingamp vs Lorient</h1>
-
-    <br>
-
+    <h1 class="content-padded">{{ match.team_one }} vs {{ match.team_two }}</h1>
     <h2 class="content-padded">Cote du match</h2>
-    <p>
-        Victoire Guingamp : 3
+    <div class="prono-cotes">
+        Victoire {{ match.team_one }} : {{ match.cote_one }}
         <br>
-        Match nul : 3
+        Match nul : {{ match.cote_two }}
         <br>
-        Victoire Lorient : 3
-    </p>
-
-    <br>
-
+        Victoire {{ match.team_two }} : {{ match.cote_three }}
+    </div>
     <h2 class="content-padded">Pronostique</h2>
-    <form ng-submit="addProno()">
-        <input type="text" placeholder="Guingamp">
-        <input type="text" placeholder="Lorient">
-        <button class="btn btn-negative btn-block">Valider</button>
+    <form name="form-prono" class="form-prono" ng-submit="addProno()">
+        <input type="number" name="score-one" placeholder="{{ match.team_one }}">
+        <input type="number" name="score-two" placeholder="{{ match.team_two }}">
+        <input type="hidden" name="match-id" value="{{ match.id }}">
+        <button class="btn btn-positive btn-block">Valider</button>
     </form>
 </div>

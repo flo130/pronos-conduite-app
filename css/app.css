@@ -1,3 +1,29 @@
+/** contenu d'une page (hors titre appli et navigation) **/ 
+.content {
+    background-color: #108a93;
+    color: white;
+}
+h1 {
+    padding: 0 0 10px 0;
+}
+
+/** header **/
+.bar {
+    background-color: #ad1d28;
+}
+.title {
+    color: white;
+}
+.bar-tab .tab-item.active, .bar-tab .tab-item:active {
+    color: white;
+}
+
+/** boutons **/
+.btn-negativ {
+    background-color: #ad1d28;
+}
+
+/** div de chargement (loader) **/
 .shadowing {
     display: none;
     position: fixed;
@@ -14,6 +40,35 @@
     background-position:center center;
 }
 
+/** padding sur toutes les pages **/
 .padding {
     padding: 3% 3%;
+}
+
+/** classement **/
+table.classement thead {
+    border-bottom: 1px solid white; 
+}
+table.classement tbody td {
+    padding: 6px 3px;
+}
+
+/** notifications **/
+.notif {
+    padding: 0 0 40px 0;
+}
+.notif-contenu {
+    padding: 0 0 20px 0;
+}
+
+/** ajouter pronos **/
+.prono-cotes {
+    padding: 0 0 20px 0;
+}
+.form-prono {
+    text-align: center;
+}
+.form-prono input {
+    width: 40%;
+    color: black;
 }
