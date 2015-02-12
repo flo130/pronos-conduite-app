@@ -1,1 +1,8 @@
-<p>login</p>
+<div  class="padding" ng-controller="LoginCtrl">
+	<h1 class="content-padded">Connexion</h1>
+    <form name="login" ng-submit="login()">
+        <input type="text" name="login" placeholder="Login" ng-model="user.login">
+        <input type="password" name="password" placeholder="Mot de passe" ng-model="user.password">
+        <button class="btn btn-positive btn-block">Valider</button>
+    </form>
+</div>

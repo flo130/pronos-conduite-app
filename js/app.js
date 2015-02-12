@@ -106,10 +106,12 @@ app.controller("PronostiqueCtrl", function($scope, $http) {
 app.controller("AddPronoCtrl", function($scope, $http) {
     //récupère les données (equipes qui jouent, cotes du match, etc...)
     var url = "http://www.pronos-conduite.com/api/getNextMatch";
+	$scope.prono = {};
     $(".shadowing").show();
     $http.get(url)
     .success(function(response) {
         $scope.match = response;
+		$scope.prono.idMatch = response.id;
         $(".shadowing").hide();
     })
     .error(function() {
@@ -120,14 +122,12 @@ app.controller("AddPronoCtrl", function($scope, $http) {
     //prise en compte du pronostique
     $scope.addProno = function() {
         //poste les données vers le serveur
-        var url = "http://www.pronos-conduite.com/api/getNextMatch";
+        var url = "http://www.pronos-conduite.com/api/setProno";
         $(".shadowing").show();
         $http
-        .post(url, { 
-            //@todo : poster les données
-        })
+        .post(url, $scope.prono)
         .success(function(response) {
-            $scope.notifications = response;
+            console.log(response);
             $(".shadowing").hide();
         })
         .error(function() {
@@ -135,6 +135,11 @@ app.controller("AddPronoCtrl", function($scope, $http) {
             alert(errorMsg);
         });
     }
+});
+
+//login controller
+app.controller("LoginCtrl", function($scope, $http) {
+
 });
 
 

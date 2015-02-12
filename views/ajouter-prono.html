@@ -10,9 +10,8 @@
     </div>
     <h2 class="content-padded">Pronostique</h2>
     <form name="form-prono" class="form-prono" ng-submit="addProno()">
-        <input type="number" name="score-one" placeholder="{{ match.team_one }}">
-        <input type="number" name="score-two" placeholder="{{ match.team_two }}">
-        <input type="hidden" name="match-id" value="{{ match.id }}">
+        <input type="number" name="score-one" placeholder="{{ match.team_one }}" ng-model="prono.teamOne">
+        <input type="number" name="score-two" placeholder="{{ match.team_two }}" ng-model="prono.teamTwo">
         <button class="btn btn-positive btn-block">Valider</button>
     </form>
 </div>

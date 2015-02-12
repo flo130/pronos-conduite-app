@@ -3,6 +3,9 @@
     background-color: #108a93;
     color: white;
 }
+input {
+	color: black;
+}
 h1 {
     padding: 0 0 10px 0;
 }
@@ -65,5 +68,10 @@ table.classement tbody td {
 }
 .form-prono input {
     width: 40%;
-    color: black;
+}
+
+/** boutons **/
+.btn-positive {
+	background-color: #ad1d28;
+	border: 1px solid #ad1d28;
 }
